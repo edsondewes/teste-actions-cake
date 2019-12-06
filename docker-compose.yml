@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  projeto1-api:
+    build: ./projeto1/Projeto1/
+    image: "edsondewes/teste-actions:projeto1-api-${GIT_ID-latest}"
+
+  projeto1-console:
+    build: ./projeto1/ConsoleApp1/
+    image: "edsondewes/teste-actions:projeto1-console-${GIT_ID-latest}"
+
+  projeto2-api:
+    build: ./projeto2/Projeto2/
+    image: "edsondewes/teste-actions:projeto2-api-${GIT_ID-latest}"
+ 
+  web:
+    build: ./web/
+    image: "edsondewes/teste-actions:web-${GIT_ID-latest}"
+
