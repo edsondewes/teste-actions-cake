@@ -1,0 +1,19 @@
+name: .NET Core
+
+on: [deployment]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '13.x'
+    - uses: ecampidoglio/cake-action@master
+      with:
+        script-path: build.cake
