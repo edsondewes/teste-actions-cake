@@ -1,6 +1,6 @@
 name: .NET Core
 
-on: [deployment]
+on: [release]
 
 jobs:
   build:
