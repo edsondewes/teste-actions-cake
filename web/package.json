@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config ./webpack/dev.js",
-    "build:standalone": "rimraf ./dist && webpack --config ./webpack/standalone.js --progress"
+    "build:standalone": "rimraf ./dist && webpack --config ./webpack/standalone.js"
   },
   "devDependencies": {
     "@babel/core": "^7.7.5",
