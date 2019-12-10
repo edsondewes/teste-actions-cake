@@ -28,7 +28,8 @@ Task("client-build-standalone")
 Task("dotnet-publish")
     .Does(() =>
     {
-        var settings = new DotNetCorePublishSettings { Configuration = configuration };
+        var publishSettings = new DotNetCorePublishSettings { NoRestore = true, Configuration = configuration };
+        var restoreSettings = new DotNetCoreRestoreSettings { LockedMode = true };
         var solutions = new[] 
         {
             "./projeto1/Projeto1.sln",
@@ -37,7 +38,8 @@ Task("dotnet-publish")
 
         foreach(var path in solutions)
         {
-            DotNetCorePublish(path, settings);
+            DotNetCoreRestore(path, restoreSettings);
+            DotNetCorePublish(path, publishSettings);
         }
     });
 
